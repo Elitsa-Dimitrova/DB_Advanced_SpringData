@@ -1,12 +1,27 @@
 package entities;
 
+import main.java.Annotations.Column;
+import main.java.Annotations.Entity;
+import main.java.Annotations.Id;
+
 import java.util.Date;
 
+@Entity(name = "users")
 public class User {
+    @Id
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "age")
     private int age;
+
+    @Column(name = "registration_date")
     private Date registrationDate;
 
     public User(String username, String password, int age, Date registrationDate) {
