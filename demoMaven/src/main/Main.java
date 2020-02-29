@@ -17,8 +17,9 @@ public class Main {
         EntityManager<entities.User> em = new EntityManager(connector.getConnection());
         em.persist(user);
 
+        System.out.println("Input user id:");
         BufferedReader buffer=new BufferedReader(new InputStreamReader(System.in));
-        String line=buffer.readLine();
+        String line = buffer.readLine();
         user = new entities.User("Tosho","pass",20, new Date());
         em.persist(user);
         System.out.print(user.getAge());

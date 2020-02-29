@@ -76,34 +76,35 @@ public class EntityManager<E> implements DbContext<E> {
     }
 
     private boolean doInsert(E entity, Field primary) throws SQLException, IllegalAccessException {
-        String query = "INSERT INTO " + this.getTableName(entity.getClass()) + " VALUES ";
-
-        String columns = "( ";
+        String tableName = this.getTableName(entity.getClass());
+        String query = "INSERT INTO " + this.getTableName(entity.getClass()) + " (";
+        String columns = "";
         String values = "";
 
         Field[] fields = entity.getClass().getDeclaredFields();
 
         for (int i = 0; i < fields.length; i++) {
-            fields[i].setAccessible(true);
+            Field field = fields[i];
+            field.setAccessible(true);
 
-            if(!fields[i].isAnnotationPresent(Id.class)) {
-                Object value = fields[i].get(entity);
+            if (!field.getName().equals(primary.getName())) {
+                columns += '`' + this.getFieldName(field) + '`';
 
-                if(value instanceof Date){
-                    value = new SimpleDateFormat("yyyy-MM-dd").format(value);
+                Object value = field.get(entity);
+
+                if (value instanceof Date) {
+                    values += "'" + new SimpleDateFormat("yyyy-MM-dd").format(value) + "'";
+                } else {
+                    values += "\'" + value + "\'";
                 }
 
                 if (i < fields.length - 1) {
-                    columns += "`" + fields[i].getName() + "`,";
-                    values += "`" + value + "`)";
-                }
-                else {
-                    columns += "`" + fields[i].getName() + "`)";
-                    values += "`" + value + "`))";
+                    columns += ", ";
+                    values += ", ";
                 }
             }
         }
-
+        query += columns + ") " + "VALUES(" + values + ")";
         return connection.prepareStatement(query).execute();
     }
 
