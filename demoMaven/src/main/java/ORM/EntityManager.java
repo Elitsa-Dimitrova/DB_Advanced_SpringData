@@ -20,7 +20,6 @@ public class EntityManager<E> implements DbContext<E> {
         this.connection = connection;
     }
 
-    // TODO: Implement Methods
     @Override
     public boolean persist(E entity) throws IllegalAccessException, SQLException {
         Field primary = this.getId(entity.getClass());
@@ -33,10 +32,60 @@ public class EntityManager<E> implements DbContext<E> {
         return this.doUpdate(entity,primary);
     }
 
+    @Override
+    public <E1> void doCreate(Class<E1> entity) throws SQLException {
+        String query = "CREATE TABLE " + this.getTableName(entity) + " (";
+
+        Field[] fields = entity.getDeclaredFields();
+
+        for (int i = 0; i<fields.length; i++){
+            Field currField = fields[i];
+            String columnsDefinition = "";
+
+            currField.setAccessible(true);
+
+            columnsDefinition += this.getColumnName(currField)+ " "
+                    + getDataType(currField);
+
+            if(currField.isAnnotationPresent(Id.class)){
+                columnsDefinition += " primary key auto_increment";
+            }
+
+            if(i < fields.length-1){
+                columnsDefinition += ",\n";
+            }else columnsDefinition += ")";
+
+
+            query +=columnsDefinition;
+
+            System.out.println();
+        }
+
+        connection.prepareStatement(query).execute();
+    }
+
+    private String getDataType(Field currField) {
+        String result = "";
+
+        switch(currField.getType().getSimpleName()){
+            case "int" :
+            case "Integer":
+                result = "int";
+                break;
+            case "Date":
+                result = "DATETIME";
+                break;
+            case "String":
+                result = "varchar(50)";
+                break;
+        }
+
+        return result;
+    }
+
     private boolean doUpdate(E entity, Field primary) throws SQLException, IllegalAccessException {
         String query = "UPDATE " + this.getTableName(entity.getClass()) + " SET ";
         String fieldsNamesAndValues = "";
-        String where = "";
 
         Field[] fields = entity.getClass().getDeclaredFields();
         for (int i = 0; i < fields.length; i++) {
@@ -76,7 +125,10 @@ public class EntityManager<E> implements DbContext<E> {
     }
 
     private boolean doInsert(E entity, Field primary) throws SQLException, IllegalAccessException {
-        String tableName = this.getTableName(entity.getClass());
+       if(!checkIfTableExists(entity.getClass())){
+            this.doCreate(entity.getClass());
+        }
+
         String query = "INSERT INTO " + this.getTableName(entity.getClass()) + " (";
         String columns = "";
         String values = "";
@@ -88,7 +140,7 @@ public class EntityManager<E> implements DbContext<E> {
             field.setAccessible(true);
 
             if (!field.getName().equals(primary.getName())) {
-                columns += '`' + this.getFieldName(field) + '`';
+                columns += '`' + this.getColumnName(field) + '`';
 
                 Object value = field.get(entity);
 
@@ -111,10 +163,10 @@ public class EntityManager<E> implements DbContext<E> {
     private String getTableName(Class entity) {
         String tableName = "";
 
-        tableName = ((Entity)entity.getAnnotation(Entity.class)).name();
+        tableName = ((Entity)entity.getAnnotation(Entity.class)).name() + "s";
 
         if (!tableName.trim().equals("")){
-            tableName = entity.getSimpleName();
+            tableName = entity.getSimpleName() + "s";
         }
 
         return tableName;
@@ -193,5 +245,14 @@ public class EntityManager<E> implements DbContext<E> {
                 filter(field -> field.isAnnotationPresent(Id.class)).
                 findFirst().
                 orElseThrow(() -> new UnsupportedOperationException("Entity does not have primary key."));
+    }
+
+    private boolean checkIfTableExists(Class entity) throws SQLException {
+        String query = "select table_name from information_schema.TABLES\n" +
+                "where table_schema = 'orm_db'\n" +
+                "and table_name = '" + this.getTableName(entity) + "';";
+
+        ResultSet resultSet = connection.prepareStatement(query).executeQuery();
+        return resultSet.next();
     }
 }

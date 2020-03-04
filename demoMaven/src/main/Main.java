@@ -12,17 +12,18 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) throws SQLException, IllegalAccessException, IOException {
         Connector connector = new Connector();
-        connector.createConnection("root", "moitaparola97", "soft_uni");
-        entities.User user = new entities.User("pesho", "pass", 20, new Date());
-        EntityManager<entities.User> em = new EntityManager(connector.getConnection());
-        em.persist(user);
+        connector.createConnection("root", "moitaparola97", "orm_db");
 
-        System.out.println("Input user id:");
-        BufferedReader buffer=new BufferedReader(new InputStreamReader(System.in));
-        String line = buffer.readLine();
-        user = new entities.User("Tosho","pass",20, new Date());
+        EntityManager<entities.User> em = new EntityManager(connector.getConnection());
+
+       // em.doCreate(entities.User.class);
+
+        entities.User user = new entities.User("pesho", "pass", 20, new Date());
+        entities.User user2 = new entities.User("gosho", "pass1", 30, new Date());
+
         em.persist(user);
-        System.out.print(user.getAge());
+        em.persist(user2);
+
     }
 
 }
