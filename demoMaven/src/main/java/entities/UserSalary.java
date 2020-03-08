@@ -1,4 +1,4 @@
-package entities;
+package main.java.entities;
 
 import main.java.Annotations.Column;
 import main.java.Annotations.Entity;
@@ -7,7 +7,7 @@ import main.java.Annotations.Id;
 import java.util.Date;
 
 @Entity(name = "users")
-public class User {
+public class UserSalary {
     @Id
     @Column(name = "id")
     private int id;
@@ -27,8 +27,7 @@ public class User {
     @Column(name = "salary")
     private Double salary;
 
-
-    public User(String username, String password, int age, Date registrationDate, double salary) {
+    public UserSalary (String username, String password, int age, Date registrationDate, Double salary) {
         this.username = username;
         this.password = password;
         this.age = age;

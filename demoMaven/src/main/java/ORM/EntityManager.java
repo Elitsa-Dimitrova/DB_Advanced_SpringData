@@ -10,8 +10,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class EntityManager<E> implements DbContext<E> {
     private Connection connection;
@@ -56,10 +58,30 @@ public class EntityManager<E> implements DbContext<E> {
             }else columnsDefinition += ")";
 
 
-            query +=columnsDefinition;
-
-            System.out.println();
+            query += columnsDefinition;
         }
+
+        connection.prepareStatement(query).execute();
+    }
+
+    @Override
+    public <E1> void doAlter(Class<E1> entity) throws SQLException {
+        String query =  "ALTER TABLE " + this.getTableName(entity) + " ADD ";
+
+        List<String> toAdd = new ArrayList<>();
+        Field[] fields = entity.getDeclaredFields();
+
+        for (int i = 0; i < fields.length; i++){
+            Field currField = fields[i];
+            currField.setAccessible(true);
+
+            if(!this.checkIfColumnExists(currField)){
+                toAdd.add(
+                        this.getColumnName(currField) + " " + this.getDataType(currField));
+            }
+        }
+
+        query += String.join(" ,", toAdd);
 
         connection.prepareStatement(query).execute();
     }
@@ -71,6 +93,10 @@ public class EntityManager<E> implements DbContext<E> {
             case "int" :
             case "Integer":
                 result = "int";
+                break;
+            case "Double":
+            case "double":
+                result = "DOUBLE(100,2)";
                 break;
             case "Date":
                 result = "DATETIME";
@@ -127,7 +153,12 @@ public class EntityManager<E> implements DbContext<E> {
     private boolean doInsert(E entity, Field primary) throws SQLException, IllegalAccessException {
        if(!checkIfTableExists(entity.getClass())){
             this.doCreate(entity.getClass());
-        }
+        }else {
+           if(this.checkIfThereIsAnUnknownColumn(entity.getClass().getDeclaredFields())){
+               this.doAlter(entity.getClass());
+               System.out.println("yeey");
+           }
+       }
 
         String query = "INSERT INTO " + this.getTableName(entity.getClass()) + " (";
         String columns = "";
@@ -158,6 +189,14 @@ public class EntityManager<E> implements DbContext<E> {
         }
         query += columns + ") " + "VALUES(" + values + ")";
         return connection.prepareStatement(query).execute();
+    }
+
+    private boolean checkIfThereIsAnUnknownColumn(Field[] fields) throws SQLException {
+        for (Field field : fields) {
+            if(!checkIfColumnExists(field))
+                return false;
+        }
+        return true;
     }
 
     private String getTableName(Class entity) {
@@ -254,5 +293,22 @@ public class EntityManager<E> implements DbContext<E> {
 
         ResultSet resultSet = connection.prepareStatement(query).executeQuery();
         return resultSet.next();
+    }
+
+    private boolean checkIfColumnExists(Field field) throws SQLException {
+        String query = "select COLUMN_NAME from information_schema.COLUMNS\n" +
+                "where table_schema = 'orm_db'\n" +
+                "AND TABLE_NAME = 'users';";
+
+        ResultSet resultSet = connection.prepareStatement(query).executeQuery();
+
+
+        while(resultSet.next()){
+            if(this.getColumnName(field).equals(resultSet.getString(1))){
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 }

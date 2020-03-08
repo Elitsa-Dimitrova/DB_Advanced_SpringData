@@ -2,10 +2,8 @@ package main;
 
 import main.java.ORM.Connector;
 import main.java.ORM.EntityManager;
-
-import java.io.BufferedReader;
+import main.java.entities.UserSalary;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -16,13 +14,15 @@ public class Main {
 
         EntityManager<entities.User> em = new EntityManager(connector.getConnection());
 
-       // em.doCreate(entities.User.class);
+        //em.doCreate(entities.User.class);
 
-        entities.User user = new entities.User("pesho", "pass", 20, new Date());
-        entities.User user2 = new entities.User("gosho", "pass1", 30, new Date());
+        entities.User userS = new entities.User("pesho", "pass", 20, new Date(), 500.);
+        //UserSalary userS2 = new UserSalary("gosho", "pass1", 30, new Date(), 4000.);
 
-        em.persist(user);
-        em.persist(user2);
+        em.persist(userS);
+
+
+
 
     }
 
