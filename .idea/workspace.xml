@@ -82,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demoMaven/src/main/java/ORM/EntityManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="157" column="47" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
+            <state relative-caret-position="212">
+              <caret line="324" column="9" selection-start-line="324" selection-start-column="9" selection-end-line="324" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#persist#0;class#EntityManager#0" />
@@ -92,8 +92,12 @@
                 <element signature="method#getDataType#0;class#EntityManager#0" />
                 <element signature="method#doUpdate#0;class#EntityManager#0" />
                 <element signature="method#getFieldName#0;class#EntityManager#0" />
+                <element signature="method#doInsert#0;class#EntityManager#0" />
+                <element signature="e#3880#3937#1" />
+                <element signature="method#checkIfThereIsAnUnknownColumn#0;class#EntityManager#0" />
                 <element signature="method#getTableName#0;class#EntityManager#0" />
                 <element signature="method#getColumnName#0;class#EntityManager#0" />
+                <element signature="e#6990#7018#1" />
                 <element signature="e#6887#6888#0" expanded="true" />
                 <element signature="e#6989#6990#0" expanded="true" />
                 <element signature="method#fillEntity#0;class#EntityManager#0" />
@@ -101,6 +105,7 @@
                 <element signature="method#findFirst#1;class#EntityManager#0" />
                 <element signature="method#getId#0;class#EntityManager#0" />
                 <element signature="method#checkIfTableExists#0;class#EntityManager#0" />
+                <element signature="method#checkIfColumnExists#0;class#EntityManager#0" />
               </folding>
             </state>
           </provider>
@@ -271,12 +276,12 @@
       <updated>1582979849385</updated>
       <workItem from="1582979850899" duration="394000" />
       <workItem from="1582980409468" duration="16481000" />
-      <workItem from="1583312360208" duration="20864000" />
+      <workItem from="1583312360208" duration="22727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37739000" />
+    <option name="totallyTimeSpent" value="39602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -540,8 +545,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demoMaven/src/main/java/ORM/EntityManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="157" column="47" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
+        <state relative-caret-position="212">
+          <caret line="324" column="9" selection-start-line="324" selection-start-column="9" selection-end-line="324" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#persist#0;class#EntityManager#0" />
@@ -550,8 +555,12 @@
             <element signature="method#getDataType#0;class#EntityManager#0" />
             <element signature="method#doUpdate#0;class#EntityManager#0" />
             <element signature="method#getFieldName#0;class#EntityManager#0" />
+            <element signature="method#doInsert#0;class#EntityManager#0" />
+            <element signature="e#3880#3937#1" />
+            <element signature="method#checkIfThereIsAnUnknownColumn#0;class#EntityManager#0" />
             <element signature="method#getTableName#0;class#EntityManager#0" />
             <element signature="method#getColumnName#0;class#EntityManager#0" />
+            <element signature="e#6990#7018#1" />
             <element signature="e#6887#6888#0" expanded="true" />
             <element signature="e#6989#6990#0" expanded="true" />
             <element signature="method#fillEntity#0;class#EntityManager#0" />
@@ -559,6 +568,7 @@
             <element signature="method#findFirst#1;class#EntityManager#0" />
             <element signature="method#getId#0;class#EntityManager#0" />
             <element signature="method#checkIfTableExists#0;class#EntityManager#0" />
+            <element signature="method#checkIfColumnExists#0;class#EntityManager#0" />
           </folding>
         </state>
       </provider>

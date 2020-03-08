@@ -310,4 +310,19 @@ public class EntityManager<E> implements DbContext<E> {
         }
             return false;
     }
+
+    private boolean delete(E entity) throws SQLException, IllegalAccessException {
+        String query = "DELETE FROM " + this.getTableName(entity.getClass())+ "\n" +
+                "WHERE `id` = " + this.getId(entity.getClass()).get(entity);
+
+        for (Field declaredField : entity.getClass().getDeclaredFields()) {
+            declaredField.setAccessible(true);
+
+            if(declaredField.isAnnotationPresent(Id.class)){
+                Object value = this.getId(entity.getClass()).get(entity);
+                query += value;
+            }
+        }
+        return connection.prepareStatement(query).execute();
+    }
 }
