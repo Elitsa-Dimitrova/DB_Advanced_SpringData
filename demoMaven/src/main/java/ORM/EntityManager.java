@@ -154,9 +154,8 @@ public class EntityManager<E> implements DbContext<E> {
        if(!checkIfTableExists(entity.getClass())){
             this.doCreate(entity.getClass());
         }else {
-           if(this.checkIfThereIsAnUnknownColumn(entity.getClass().getDeclaredFields())){
+           if(!this.checkIfThereIsAnUnknownColumn(entity.getClass().getDeclaredFields())){
                this.doAlter(entity.getClass());
-               System.out.println("yeey");
            }
        }
 
@@ -193,8 +192,9 @@ public class EntityManager<E> implements DbContext<E> {
 
     private boolean checkIfThereIsAnUnknownColumn(Field[] fields) throws SQLException {
         for (Field field : fields) {
-            if(!checkIfColumnExists(field))
+            if(!checkIfColumnExists(field)){
                 return false;
+            }
         }
         return true;
     }
@@ -307,8 +307,7 @@ public class EntityManager<E> implements DbContext<E> {
             if(this.getColumnName(field).equals(resultSet.getString(1))){
                 return true;
             }
-            return false;
         }
-        return false;
+            return false;
     }
 }
