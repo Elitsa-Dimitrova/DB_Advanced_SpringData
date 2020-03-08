@@ -2,7 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="818dd6cb-749f-4039-af7e-cf027f16f2a4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/ORM/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/demoMaven/src/main/java/ORM/EntityManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/dataSources/95ffacb4-89d1-4917-b1d3-7210943e6f37.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/dataSources/95ffacb4-89d1-4917-b1d3-7210943e6f37/storage_v2/_src_/schema/minions_db.QAU07A.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/dataSources/95ffacb4-89d1-4917-b1d3-7210943e6f37/storage_v2/_src_/schema/minions_db.QAU07A.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/dataSources/95ffacb4-89d1-4917-b1d3-7210943e6f37/storage_v2/_src_/schema/soft_uni.W8OYTg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/dataSources/95ffacb4-89d1-4917-b1d3-7210943e6f37/storage_v2/_src_/schema/soft_uni.W8OYTg.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/libraries/mysql_connector_java_8_0_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/libraries/user.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/db1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/out/production/db1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/src/DBAdvancedHw.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW1/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/demoMaven.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/Annotations/Column.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/Annotations/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/Annotations/Id.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/ORM/Connector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/ORM/DbContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/ORM/EntityManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoMaven/src/main/java/entities/UserSalary.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,70 +87,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demoMaven/src/main/java/entities/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1638#1639#0" expanded="true" />
-                <element signature="e#1682#1683#0" expanded="true" />
-                <element signature="e#1718#1719#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demoMaven/src/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demoMaven/src/main/java/ORM/EntityManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="324" column="9" selection-start-line="324" selection-start-column="9" selection-end-line="324" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#persist#0;class#EntityManager#0" />
-                <element signature="method#doCreate#0;class#EntityManager#0" />
-                <element signature="method#doAlter#0;class#EntityManager#0" />
-                <element signature="method#getDataType#0;class#EntityManager#0" />
-                <element signature="method#doUpdate#0;class#EntityManager#0" />
-                <element signature="method#getFieldName#0;class#EntityManager#0" />
-                <element signature="method#doInsert#0;class#EntityManager#0" />
-                <element signature="e#3880#3937#1" />
-                <element signature="method#checkIfThereIsAnUnknownColumn#0;class#EntityManager#0" />
-                <element signature="method#getTableName#0;class#EntityManager#0" />
-                <element signature="method#getColumnName#0;class#EntityManager#0" />
-                <element signature="e#6990#7018#1" />
-                <element signature="e#6887#6888#0" expanded="true" />
-                <element signature="e#6989#6990#0" expanded="true" />
-                <element signature="method#fillEntity#0;class#EntityManager#0" />
-                <element signature="method#fillField#0;class#EntityManager#0" />
-                <element signature="method#findFirst#1;class#EntityManager#0" />
-                <element signature="method#getId#0;class#EntityManager#0" />
-                <element signature="method#checkIfTableExists#0;class#EntityManager#0" />
-                <element signature="method#checkIfColumnExists#0;class#EntityManager#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/57341f64-b343-4c17-936d-fbab563ae0e4/console_5.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -176,41 +152,6 @@
               <item name="DB_Advanced_SpringData" type="b2602c69:ProjectViewProjectNode" />
               <item name="DB_Advanced_SpringData" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DB_Advanced_SpringData" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Advanced_SpringData" type="462c0819:PsiDirectoryNode" />
-              <item name="demoMaven" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Advanced_SpringData" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Advanced_SpringData" type="462c0819:PsiDirectoryNode" />
-              <item name="demoMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Advanced_SpringData" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Advanced_SpringData" type="462c0819:PsiDirectoryNode" />
-              <item name="demoMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Advanced_SpringData" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Advanced_SpringData" type="462c0819:PsiDirectoryNode" />
-              <item name="demoMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Advanced_SpringData" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Advanced_SpringData" type="462c0819:PsiDirectoryNode" />
-              <item name="demoMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -225,7 +166,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/demoMaven/src" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Introduction-to-Hibernate-Skeleton - Copy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JAVA_DB_APPS_INTRODUCTION" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -276,16 +217,15 @@
       <updated>1582979849385</updated>
       <workItem from="1582979850899" duration="394000" />
       <workItem from="1582980409468" duration="16481000" />
-      <workItem from="1583312360208" duration="22727000" />
+      <workItem from="1583312360208" duration="23050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39602000" />
+    <option name="totallyTimeSpent" value="39925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18910742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -296,7 +236,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33224222" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33224222" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.090016365" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -454,16 +394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demoMaven/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.19.jar!/com/mysql/cj/NativeSession.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -536,13 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/57341f64-b343-4c17-936d-fbab563ae0e4/console_5.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demoMaven/src/main/java/ORM/EntityManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -570,6 +493,23 @@
             <element signature="method#checkIfTableExists#0;class#EntityManager#0" />
             <element signature="method#checkIfColumnExists#0;class#EntityManager#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demoMaven/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/57341f64-b343-4c17-936d-fbab563ae0e4/console_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>

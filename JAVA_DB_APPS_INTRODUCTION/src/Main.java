@@ -21,7 +21,7 @@ public class Main {
 
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "moitaparola97");
+        properties.setProperty("password", "pass");
 
         connection = DriverManager.
                 getConnection(CONNECTION_STRING + DATABASE_NAME, properties);
